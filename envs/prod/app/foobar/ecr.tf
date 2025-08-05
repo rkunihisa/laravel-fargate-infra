@@ -27,3 +27,8 @@ resource "aws_ecr_lifecycle_policy" "nginx" {
   )
   repository = aws_ecr_repository.nginx.name
 }
+
+module "nginx" {
+  source = "../../../../modules/ecr"
+  name   = "example-prod-foobar-nginx"
+}
